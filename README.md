@@ -118,7 +118,7 @@ I like events and especially, queues of events, which are pipes carrying message
 
 I'll explore actors in more detail much later. For now, let me pin "pipes" on the wall, and remind you of the widely known and under-appreciated concurrent REPL environment called the Unix shell. When you connect commands with pipes, these run concurrently, the output from one becoming the input to the next. It is a simple and obvious model, and fits many of our criteria for distributed code. State sits in the messages, not the code. Each piece can run asynchronously.
 
-So in my language, the default flow is output-to-input, pipes carrying messages and commands from one piece to the next. It's a starting point: I'm sure we'll need more sophsticated queues later.
+So in my language, the default flow is output-to-input, pipes carrying messages and commands from one piece to the next. It's a starting point: I'm sure we'll need more sophisticated queues later.
 
 Other inspirations are obvious: Erlang, Go, Rust, and Clojure. I've noticed from several ZeroMQ workshops that people using Clojure always seem to get their examples done fastest. I suspect it's the REPL again. Whatever, when someone can write ZeroMQ code faster than me, it's time for me to shift to newer tools. And that means moving away from C, at least for the 90% of cases that don't need a systems language.
 
@@ -157,7 +157,7 @@ Which I'd rather write like:
 
     command (argument argument)
 
-So no stacks, RPNs, or lists of lists of lists. No recursive descent parsers either. A language that needs recursion to parse it is too complex. Come to think of it, arrays and other Von Neuman artifacts annoy me too. Natural things come in sets, queues, clusters, crowds, and clouds.
+So no stacks, RPNs, or lists of lists of lists. No recursive descent parsers either. A language that needs recursion to parse it is too complex. Come to think of it, arrays and other Von Neumann artifacts annoy me too. Natural things come in sets, queues, clusters, crowds, and clouds.
 
 I dislike error handling. Partly it's from laziness. More though, it's from experience. Oh, great, you got an error code from a library call! What do you do now? It's like getting a phone call from your takeaway pizza place telling you their oven is switched off. What do you do now? Wait, abort, or retry?
 
